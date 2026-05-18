@@ -241,48 +241,62 @@ export default function PresentationDeck() {
       />
       
       {/* Top Branding Bar */}
-      <AnimatePresence>
-        {showHeader && (
-          <motion.header 
-            initial={{ y: -64, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -64, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "circOut" }}
-            className="h-16 border-b border-[#2A2A2A] flex items-center justify-between px-8 shrink-0 z-50 absolute top-0 left-0 right-0 bg-[#0D0D0DE6] backdrop-blur"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[#FFFFFF] flex items-center justify-center rounded-sm">
-                <span className="text-[#0D0D0D] font-bold text-xs">WCC</span>
-              </div>
-              <span className="uppercase tracking-[0.2em] text-[10px] font-semibold text-[#888] hidden md:inline">
-                Warwick Cyber Consulting
-              </span>
-            </div>
-            <div className="flex items-center gap-6 md:gap-8">
-              <div className="text-right hidden sm:block">
-                <p className="text-[10px] text-[#888] uppercase tracking-widest">Client</p>
-                <p className="text-xs font-bold text-[#FFFFFF]">Alpha Group <span className="hidden md:inline">| Azure Strategic Assessment</span></p>
-              </div>
-              <div className="w-[1px] h-8 bg-[#2A2A2A] hidden sm:block"></div>
-              <div className="text-right hidden md:block">
-                <p className="text-[10px] text-[#888] uppercase tracking-widest">Timeline</p>
-                <p className="text-xs font-bold text-[#FFFFFF] italic font-serif">90-Day Sprint (Q3-Q4)</p>
-              </div>
-              <div className="w-[1px] h-8 bg-[#2A2A2A] hidden md:block"></div>
-              <button 
-                onClick={handleExportPDF}
-                disabled={isExporting}
-                className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#888] hover:text-[#fff] transition-colors disabled:opacity-50"
-              >
-                <Download size={16} />
-                <span className="hidden md:inline">{isExporting ? 'Exporting...' : 'Export PDF'}</span>
-              </button>
-            </div>
-          </motion.header>
-        )}
-      </AnimatePresence>
+      <header 
+        className="h-16 border-b border-[#2A2A2A] flex items-center justify-between px-8 shrink-0 z-50 absolute top-0 left-0 right-0 bg-[#0D0D0DE6] backdrop-blur"
+        onMouseEnter={() => setShowHeader(true)}
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-[#FFFFFF] flex items-center justify-center rounded-sm">
+            <span className="text-[#0D0D0D] font-bold text-xs">WCC</span>
+          </div>
+          <span className="uppercase tracking-[0.2em] text-[10px] font-semibold text-[#888] hidden md:inline">
+            Warwick Cyber Consulting
+          </span>
+        </div>
 
-      <div className={`flex-grow flex overflow-hidden ${showHeader ? 'pt-16' : ''} transition-all duration-500`}>
+        <div 
+          className="flex items-center h-full"
+          onMouseEnter={() => setShowHeader(true)}
+        >
+          <AnimatePresence>
+            {showHeader && (
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="flex items-center gap-6 md:gap-8"
+              >
+                <div className="text-right hidden sm:block">
+                  <p className="text-[10px] text-[#888] uppercase tracking-widest">Client</p>
+                  <p className="text-xs font-bold text-[#FFFFFF]">Alpha Group <span className="hidden md:inline">| Azure Strategic Assessment</span></p>
+                </div>
+                <div className="w-[1px] h-8 bg-[#2A2A2A] hidden sm:block"></div>
+                <div className="text-right hidden md:block">
+                  <p className="text-[10px] text-[#888] uppercase tracking-widest">Timeline</p>
+                  <p className="text-xs font-bold text-[#FFFFFF] italic font-serif">90-Day Sprint (Q3-Q4)</p>
+                </div>
+                <div className="w-[1px] h-8 bg-[#2A2A2A] hidden md:block"></div>
+                <button 
+                  onClick={handleExportPDF}
+                  disabled={isExporting}
+                  className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#888] hover:text-[#fff] transition-colors disabled:opacity-50"
+                >
+                  <Download size={16} />
+                  <span className="hidden md:inline">{isExporting ? 'Exporting...' : 'Export PDF'}</span>
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
+          {/* Hover Trigger Area for right corner specifically if the header is thin */}
+          {!showHeader && (
+            <div className="w-32 h-full absolute right-0 top-0 cursor-pointer" />
+          )}
+        </div>
+      </header>
+
+      <div className="flex-grow flex overflow-hidden pt-16 transition-all duration-500">
         {/* Side Slide Indicator (Editorial Rail) */}
         <aside className="w-16 border-r border-[#2A2A2A] flex-col items-center py-8 shrink-0 hidden md:flex relative h-full">
           <div className="text-[10px] origin-center rotate-[-90deg] whitespace-nowrap text-[#888] tracking-[0.3em] font-medium absolute top-24">

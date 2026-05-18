@@ -15,11 +15,22 @@ export const slides: SlideData[] = [
     category: "Executive Summary",
     title: "Understanding The Challenge",
     content: (
-      <div className="space-y-4 text-[#E5E5E5] font-sans h-full flex flex-col justify-center relative z-10">
-        <p className="text-lg lg:text-xl leading-relaxed text-[#BBB] max-w-4xl">
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+          }
+        }}
+        className="space-y-4 text-[#E5E5E5] font-sans h-full flex flex-col justify-center relative z-10"
+      >
+        <motion.p variants={{ hidden: { y: 10, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="text-lg lg:text-xl leading-relaxed text-[#BBB] max-w-4xl">
           Alpha Group is a multinational enterprise across Finance, Automotive, Energy, and Real Estate. Following a <strong className="text-[#FFFFFF]">cloud-first vision</strong>, a 100% Azure migration was implemented five years ago under the direction of the Group CIO.
-        </p>
-        <div className="bg-[#151515] border-l-4 border-[#FF3E00] p-6 lg:p-8 border-y border-r border-[#2A2A2A] my-4 group hover:border-[#444] transition-colors relative overflow-hidden">
+        </motion.p>
+        <motion.div variants={{ hidden: { y: 15, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="bg-[#151515] border-l-4 border-[#FF3E00] p-6 lg:p-8 border-y border-r border-[#2A2A2A] my-4 group hover:border-[#444] transition-colors relative overflow-hidden">
           <div className="absolute right-[-20px] top-[-20px] w-32 h-32 bg-[#FF3E000D] rounded-full blur-2xl group-hover:bg-[#FF3E001A] transition-colors"></div>
           <h3 className="font-bold text-[#FFFFFF] text-xl lg:text-2xl mb-2 font-serif italic">
             The Catalyst: Critical Breaches
@@ -27,11 +38,11 @@ export const slides: SlideData[] = [
           <p className="text-[#BBB] text-base lg:text-lg leading-relaxed">
             Recent data breaches in the <strong className="text-[#FFFFFF]">Finance and Real Estate</strong> divisions exposed significant security weaknesses, leading to substantial regulatory penalties and reputational harm.
           </p>
-        </div>
-        <p className="text-lg lg:text-xl leading-relaxed text-[#BBB] max-w-4xl">
+        </motion.div>
+        <motion.p variants={{ hidden: { y: 10, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="text-lg lg:text-xl leading-relaxed text-[#BBB] max-w-4xl">
           The Group CISO has commissioned a comprehensive security assessment. We are developing a detailed proposal outlining the methodology, project timeline, required resources, and associated costs.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     ),
   },
   {
@@ -308,44 +319,59 @@ export const slides: SlideData[] = [
     category: "Target Architecture",
     title: "100% Azure Estate",
     content: (
-      <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-center h-full relative z-10">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+        className="flex flex-col md:flex-row gap-8 lg:gap-16 items-center h-full relative z-10"
+      >
         <div className="flex-1 space-y-8">
-          <div>
+          <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }}>
             <h3 className="font-bold text-2xl lg:text-3xl text-[#FFFFFF] font-serif italic mb-4">The Technical Complexity</h3>
             <p className="text-lg text-[#BBB] leading-relaxed max-w-xl">A fully migrated, Microsoft-centric ecosystem with integrated Operations Technology.</p>
-          </div>
+          </motion.div>
           
           <div className="space-y-6">
-            <div className="border-t border-[#2A2A2A] pt-4 group">
+            <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[#2A2A2A] pt-4 group">
               <div className="flex items-center justify-between mb-2">
                  <div className="text-[10px] text-[#555] group-hover:text-[#888] transition-colors uppercase tracking-widest font-bold">01. Cloud Workloads</div>
                  <div className="w-8 h-8 rounded-full border border-[#333] flex items-center justify-center text-[#555] group-hover:text-[#FFFFFF] group-hover:border-[#FFFFFF] transition-all">1</div>
               </div>
               <p className="text-base text-[#E5E5E5] group-hover:text-[#FFFFFF] transition-colors">All Azure-hosted applications, services, and workloads group-wide.</p>
-            </div>
-            <div className="border-t border-[#2A2A2A] pt-4 group">
+            </motion.div>
+            <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[#2A2A2A] pt-4 group">
               <div className="flex items-center justify-between mb-2">
                  <div className="text-[10px] text-[#555] group-hover:text-[#888] transition-colors uppercase tracking-widest font-bold">02. OT Intersection</div>
                  <div className="w-8 h-8 rounded-full border border-[#333] flex items-center justify-center text-[#555] group-hover:text-[#FFFFFF] group-hover:border-[#FFFFFF] transition-all">2</div>
               </div>
               <p className="text-base text-[#E5E5E5] group-hover:text-[#FFFFFF] transition-colors">Cloud-connected Manufacturing and Warehousing OT boundaries.</p>
-            </div>
-            <div className="border-t border-[#FF3E001A] pt-4 group">
+            </motion.div>
+            <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[#FF3E001A] pt-4 group">
               <div className="flex items-center justify-between mb-2">
                  <div className="text-[10px] text-[#FF3E00] uppercase tracking-widest font-bold">03. Shared Responsibility</div>
                  <div className="w-8 h-8 rounded-full border border-[#FF3E004D] flex items-center justify-center text-[#FF3E00] bg-[#FF3E001A] group-hover:bg-[#FF3E00] group-hover:text-[#FFFFFF] transition-all">3</div>
               </div>
               <p className="text-base text-[#E5E5E5]">Delineating security <span className="italic">OF</span> the cloud (Microsoft) and <span className="italic">IN</span> the cloud (Alpha Group).</p>
-            </div>
+            </motion.div>
           </div>
         </div>
         
-        <div className="w-64 h-64 md:w-80 md:h-80 border border-[#333] flex flex-col items-center justify-center rounded-sm bg-[#111] shrink-0 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)] cursor-crosshair hover:border-[#FF3E001A] transition-colors">
+        <motion.div 
+          variants={{ hidden: { scale: 0.8, opacity: 0 }, visible: { scale: 1, opacity: 1 } }}
+          className="w-64 h-64 md:w-80 md:h-80 border border-[#333] flex flex-col items-center justify-center rounded-sm bg-[#111] shrink-0 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)] cursor-crosshair hover:border-[#FF3E001A] transition-colors"
+        >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#FF3E0033] via-[#111] to-[#111] opacity-30 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="text-7xl lg:text-8xl font-black mb-2 text-[#FF3E00] tracking-tighter font-serif italic relative z-10 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(255,62,0,0.4)]">ALL</div>
           <div className="text-xs font-medium text-[#c0c0c0] uppercase tracking-widest text-center px-4 leading-relaxed relative z-10 mt-2">Cloud Infrastructure<br/>Group-Wide</div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     ),
   },
   {
