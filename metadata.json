@@ -1,0 +1,8 @@
+{
+  "name": "Azure Security Assessment Proposal",
+  "description": "A presentation outlining the WCC security assessment for Alpha Group's Azure Cloud environment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
