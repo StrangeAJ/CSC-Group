@@ -66,10 +66,12 @@
 }
 
 [class*="pdf-slide-page"] .pdf-vertical-text {
-  transform: rotate(-90deg) !important;
+  transform: rotate(90deg) !important;
   transform-origin: center center !important;
   white-space: nowrap !important;
   display: block !important;
+  width: 300px !important; /* Fixed width to ensure rotation doesn't clip */
+  text-align: center !important;
 }
 
 /* Force layout to be correct in PDF if motion components caused shifts */
@@ -168,9 +170,8 @@
   border: 1px solid #FF3E00 !important;
   opacity: 1 !important;
   background-color: transparent !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: grid !important;
+  place-items: center !important;
   text-align: center !important;
   line-height: normal !important;
   padding: 0 !important;
@@ -183,6 +184,7 @@
   font-weight: 700 !important;
   border-radius: 50% !important;
   box-sizing: border-box !important;
+  vertical-align: middle !important;
 }
 
 [class*="pdf-slide-page"] .pdf-marker-small {
