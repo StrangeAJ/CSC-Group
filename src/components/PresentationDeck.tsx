@@ -121,8 +121,13 @@ export default function PresentationDeck() {
                 if (s instanceof HTMLElement) {
                   // Fully expand any hidden or collapsed areas
                   s.style.display = 'flex';
+                  s.style.flexDirection = 'column';
                   s.style.visibility = 'visible';
                   s.style.opacity = '1';
+                  s.style.width = '1920px';
+                  s.style.height = '1080px';
+                  s.style.position = 'relative';
+                  s.style.overflow = 'hidden';
                 }
 
                 // Force all elements to reveal
@@ -131,7 +136,12 @@ export default function PresentationDeck() {
                   if (el instanceof HTMLElement) {
                     // Remove all motion/transition properties
                     el.style.opacity = '1';
-                    el.style.transform = 'none';
+                    
+                    // Only remove transform if it's not a preserved vertical text
+                    if (!el.classList.contains('pdf-vertical-text')) {
+                      el.style.transform = 'none';
+                    }
+                    
                     el.style.visibility = 'visible';
                     el.style.transition = 'none';
                     el.style.animation = 'none';
@@ -147,6 +157,7 @@ export default function PresentationDeck() {
                     // Fix for small dots/circles
                     if (el.classList.contains('rounded-full')) {
                       el.style.borderStyle = 'solid';
+                      el.style.borderWidth = '1px';
                     }
                   }
                 });
@@ -219,9 +230,9 @@ export default function PresentationDeck() {
                 </div>
               </header>
               
-              <div className="flex-grow flex overflow-hidden">
+              <div className="flex-grow flex overflow-hidden pdf-main-container">
                 <aside className="w-[100px] border-r border-[var(--border)] flex-col items-center py-12 shrink-0 flex relative h-full">
-                  <div className="text-[14px] origin-center rotate-[-90deg] whitespace-nowrap text-[var(--muted)] tracking-[0.3em] font-medium absolute top-40">
+                  <div className="text-[14px] origin-center rotate-[-90deg] whitespace-nowrap text-[var(--muted)] tracking-[0.3em] font-medium absolute top-40 pdf-vertical-text pdf-nowrap">
                     PRESENTATION DECK v1.0
                   </div>
                   <div className="flex flex-col gap-4 items-center absolute bottom-12">
@@ -240,12 +251,12 @@ export default function PresentationDeck() {
                 
                 <main className="flex-grow flex flex-col relative overflow-hidden">
                   <div className="w-full h-full flex flex-col p-16 overflow-hidden">
-                    <div className="flex justify-between items-start mb-12 gap-6">
+                    <div className="flex justify-between items-start mb-12 gap-6 pdf-flex-row">
                       <div>
-                        <h2 className="text-[var(--muted)] font-serif italic text-3xl mb-3">
+                        <h2 className="text-[var(--muted)] font-serif italic text-3xl mb-3 pdf-nowrap">
                           Section {String(idx + 1).padStart(2, '0')} — {slide.category}
                         </h2>
-                        <h1 className="text-[var(--foreground)] text-7xl font-bold tracking-tighter leading-none max-w-5xl uppercase" style={{ fontSize: '72px' }}>
+                        <h1 className="text-[var(--foreground)] text-7xl font-bold tracking-tighter leading-none max-w-5xl uppercase pdf-nowrap" style={{ fontSize: '72px' }}>
                           {slide.title.split(' ').map((word, i, arr) => (
                             <React.Fragment key={i}>
                               {i === arr.length - 1 ? <span className="text-[var(--accent)]">{word}.</span> : word + ' '}

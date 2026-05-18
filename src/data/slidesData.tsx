@@ -31,7 +31,7 @@ export const slides: SlideData[] = [
           Alpha Group is a multinational enterprise across Finance, Automotive, Energy, and Real Estate. Following a <strong className="text-[var(--text-white)]">cloud-first vision</strong>, a 100% Azure migration was implemented five years ago under the direction of the Group CIO.
         </motion.p>
         <motion.div variants={{ hidden: { y: 15, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="bg-[var(--card-bg)] border-l-4 border-[var(--accent)] p-6 lg:p-8 border-y border-r border-[var(--border)] my-4 group hover:border-[var(--muted)] transition-colors relative overflow-hidden">
-          <div className="absolute right-[-20px] top-[-20px] w-32 h-32 bg-[var(--accent)] opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-colors"></div>
+          <div className="absolute right-[-20px] top-[-20px] w-32 h-32 bg-[var(--accent)] opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-colors pdf-hidden"></div>
           <h3 className="font-bold text-[var(--text-white)] text-xl lg:text-2xl mb-2 font-serif italic">
             The Catalyst: Critical Breaches
           </h3>
@@ -88,18 +88,18 @@ export const slides: SlideData[] = [
             <div className="absolute -right-8 -top-8 text-9xl text-[var(--text-white)] opacity-5 font-serif italic group-hover:opacity-10 transition-opacity pdf-hidden">01</div>
             <h3 className="font-bold text-xl mb-4 font-serif italic text-[var(--text-white)]">Certifications & Standards</h3>
             <ul className="space-y-4 text-[var(--muted)] text-sm lg:text-base flex-grow flex flex-col justify-center">
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span> ISO 27001 & SOC 2 Type II Certified</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span> PCI-DSS QSA & NIST CSF 2.0 Specialists</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span> 90%+ Consultants hold CISSP/CISM</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] pdf-marker-small"></span> ISO 27001 & SOC 2 Type II Certified</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] pdf-marker-small"></span> PCI-DSS QSA & NIST CSF 2.0 Specialists</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] pdf-marker-small"></span> 90%+ Consultants hold CISSP/CISM</li>
             </ul>
           </div>
           <div className="bg-[var(--card-bg)] p-6 lg:p-8 border border-[var(--border)] flex flex-col hover:border-[var(--muted)] transition-colors relative overflow-hidden group">
             <div className="absolute -right-8 -top-8 text-9xl text-[var(--accent)] opacity-5 font-serif italic group-hover:opacity-10 transition-opacity pdf-hidden">02</div>
             <h3 className="font-bold text-xl mb-4 font-serif italic text-[var(--accent)]">Microsoft Ecosystem Authority</h3>
             <ul className="space-y-4 text-[var(--muted)] text-sm lg:text-base flex-grow flex flex-col justify-center">
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50"></span> Microsoft Solutions Partner (Security)</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50"></span> Microsoft Intelligent Security Association</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50"></span> Cloud Security Alliance (CSA) Members</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50 pdf-marker-small"></span> Microsoft Solutions Partner (Security)</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50 pdf-marker-small"></span> Microsoft Intelligent Security Association</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[var(--muted)] opacity-50 pdf-marker-small"></span> Cloud Security Alliance (CSA) Members</li>
             </ul>
           </div>
         </div>
@@ -238,7 +238,7 @@ export const slides: SlideData[] = [
               <li className="flex gap-3 items-center"><span className="text-[var(--muted)]">—</span> End-user device hardware</li>
               <li className="flex gap-3 items-center"><span className="text-[var(--muted)]">—</span> Internal Risk Analysis (post-task)</li>
             </ul>
-             <div className="absolute -right-16 -bottom-16 w-48 h-48 border border-[var(--border)] rounded-full group-hover:scale-150 transition-transform duration-700 ease-out pointer-events-none"></div>
+             <div className="absolute -right-16 -bottom-16 w-48 h-48 border border-[var(--border)] rounded-full group-hover:scale-150 transition-transform duration-700 ease-out pointer-events-none pdf-hidden"></div>
           </motion.div>
         </motion.div>
         <div className="bg-[var(--card-bg)] p-5 text-center border border-[var(--border)] group hover:border-[var(--accent)] hover:border-opacity-20 transition-colors">
@@ -340,21 +340,21 @@ export const slides: SlideData[] = [
           
           <div className="space-y-6">
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--border)] pt-4 group">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-2 pdf-flex-row">
                  <div className="text-[10px] text-[var(--muted)] opacity-60 group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">01. Cloud Workloads</div>
                  <div className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--text-white)] group-hover:border-[var(--muted)] transition-all pdf-marker">1</div>
               </div>
               <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors opacity-80 group-hover:opacity-100">All Azure-hosted applications, services, and workloads group-wide.</p>
             </motion.div>
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--border)] pt-4 group">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-2 pdf-flex-row">
                  <div className="text-[10px] text-[var(--muted)] opacity-60 group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">02. OT Intersection</div>
                  <div className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--text-white)] group-hover:border-[var(--muted)] transition-all pdf-marker">2</div>
               </div>
               <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors opacity-80 group-hover:opacity-100">Cloud-connected Manufacturing and Warehousing OT boundaries.</p>
             </motion.div>
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--accent)] border-opacity-10 pt-4 group">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-2 pdf-flex-row">
                  <div className="text-[10px] text-[var(--accent)] uppercase tracking-widest font-bold pdf-tracking-normal">03. Shared Responsibility</div>
                  <div className="w-8 h-8 rounded-full border border-[var(--accent)] border-opacity-30 flex items-center justify-center text-[var(--accent)] bg-[var(--accent)] bg-opacity-5 group-hover:bg-opacity-100 group-hover:text-[var(--text-black)] transition-all pdf-marker">3</div>
               </div>

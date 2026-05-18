@@ -34,20 +34,47 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+/* Logistics Month Blocks - Normal View */
+.pdf-month-block {
+  transition: all 0.3s ease;
+}
+
+.pdf-month-block.active {
+  background-color: var(--accent) !important;
+}
+
+.pdf-month-block.active * {
+  color: #FFFFFF !important;
+}
+
+.pdf-month-block.active span:first-child {
+  opacity: 0.9;
+}
+
 /* PDF Export Visibility Overrides */
 .pdf-slide-page * {
   visibility: visible !important;
   opacity: 1 !important;
-  transform: none !important;
   transition: none !important;
   animation: none !important;
+  pointer-events: none !important; /* Prevent hover states during capture */
+}
+
+/* Specific transform rules - allow rotation for sidebar text which is intended to be vertical */
+[class*="pdf-slide-page"] * {
+  transform: none; /* Default to none for most things to fix motion issues */
+}
+
+[class*="pdf-slide-page"] .pdf-vertical-text {
+  transform: rotate(-90deg) !important;
+  transform-origin: center center !important;
+  white-space: nowrap !important;
+  display: block !important;
 }
 
 /* Force layout to be correct in PDF if motion components caused shifts */
-[class*="pdf-slide-page"] [style*="opacity"],
-[class*="pdf-slide-page"] [style*="transform"] {
+[class*="pdf-slide-page"] [style*="opacity"] {
   opacity: 1 !important;
-  transform: none !important;
 }
 
 /* Specific PDF rendering fixes for html2canvas limitations */
@@ -59,13 +86,6 @@
   transition: none !important;
 }
 
-/* Ensure background colors and borders are fully opaque for critical markers */
-[class*="pdf-slide-page"] .rounded-full {
-  border-color: var(--accent) !important;
-  border-opacity: 1 !important;
-  background-color: var(--background) !important;
-}
-
 /* Fix for large display text like 'ALL' */
 [class*="pdf-slide-page"] .text-7xl, 
 [class*="pdf-slide-page"] .text-8xl {
@@ -75,6 +95,7 @@
   width: auto !important;
   height: auto !important;
   text-align: center !important;
+  white-space: nowrap !important;
 }
 
 /* Ensure 'ALL' container is centered */
@@ -83,6 +104,7 @@
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
+  background: #111111 !important;
 }
 
 /* Specific fix for Section 10 logistics blocks */
@@ -92,13 +114,34 @@
   align-items: center !important;
   justify-content: center !important;
   min-height: 80px !important;
-  background-color: var(--background) !important;
-  border: 1px solid var(--border) !important;
+  background-color: #0D0D0D !important;
+  border: 1px solid #2A2A2A !important;
+  opacity: 1 !important;
 }
 
 [class*="pdf-slide-page"] .pdf-month-block.active {
-  background-color: rgba(255, 62, 0, 0.1) !important;
-  border-color: var(--accent) !important;
+  background-color: #FF3E00 !important; /* Force solid red in PDF */
+  border-color: #FF3E00 !important;
+}
+
+[class*="pdf-slide-page"] .pdf-month-block.active * {
+  color: #FFFFFF !important; /* Force white text on red background */
+  background-color: transparent !important; /* Prevent double red background */
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+[class*="pdf-slide-page"] .pdf-month-block span {
+  opacity: 1 !important;
+}
+
+/* Global hider for decorative elements that break PDF captures */
+[class*="pdf-slide-page"] .blur-2xl,
+[class*="pdf-slide-page"] .blur-3xl,
+[class*="pdf-slide-page"] .rounded-full.opacity-5,
+[class*="pdf-slide-page"] .rounded-full.opacity-10 {
+  display: none !important;
 }
 
 /* Fix double text in PDF for swap components */
@@ -122,28 +165,67 @@
 
 /* Marker fix for circles in PDF */
 [class*="pdf-slide-page"] .pdf-marker {
-  border-color: var(--accent) !important;
+  border: 1px solid #FF3E00 !important;
   opacity: 1 !important;
   background-color: transparent !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  line-height: 1 !important;
+  line-height: normal !important;
   padding: 0 !important;
   overflow: visible !important;
-  min-width: 2rem !important;
-  min-height: 2rem !important;
-  width: 2rem !important;
-  height: 2rem !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+}
+
+[class*="pdf-slide-page"] .pdf-marker-small {
+  width: 6px !important;
+  height: 6px !important;
+  min-width: 6px !important;
+  min-height: 6px !important;
+  background-color: #FF3E00 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  opacity: 1 !important;
 }
 
 [class*="pdf-slide-page"] .flex-row-pdf,
-[class*="pdf-slide-page"] .flex.items-center.justify-between {
+[class*="pdf-slide-page"] .flex.items-center.justify-between,
+[class*="pdf-slide-page"] .pdf-flex-row {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: space-between !important;
+}
+
+[class*="pdf-slide-page"] .pdf-main-container {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 1920px !important;
+  height: 990px !important; /* height - header */
+}
+
+[class*="pdf-slide-page"] main {
+  width: 1820px !important; /* Fixed width to prevent text wrap issues */
+}
+
+[class*="pdf-slide-page"] .pdf-nowrap {
+  white-space: nowrap !important;
+}
+
+/* Global fix for character stacking/vertical text issue in PDF */
+[class*="pdf-slide-page"] * {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  box-sizing: border-box !important;
 }
 
 /* Hide elements for PDF specifically if needed */
@@ -160,19 +242,6 @@
   filter: none !important;
   text-shadow: none !important;
   box-shadow: none !important;
-}
-
-[class*="pdf-slide-page"] .pdf-month-block {
-  background-color: var(--background) !important;
-  opacity: 1 !important;
-}
-
-[class*="pdf-slide-page"] .pdf-month-block.active {
-  background-color: rgba(255, 62, 0, 0.1) !important;
-}
-
-[class*="pdf-slide-page"] .pdf-month-block span {
-  opacity: 1 !important;
 }
 
 @media print {
