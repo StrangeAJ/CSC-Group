@@ -175,7 +175,7 @@ export const slides: SlideData[] = [
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 pb-4 flex-grow"
         >
           <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[var(--muted)]">
-            <div className="text-[10px] text-[var(--muted)] opacity-70 uppercase tracking-widest font-bold mb-3">Phase 1</div>
+            <div className="text-[10px] text-[var(--muted)] uppercase tracking-widest font-bold mb-3">Phase 1</div>
             <div className="font-bold text-xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">Initial Vector</div>
             <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed">Phishing successfully compromised credentials due to gaps in behavioral security.</p>
           </motion.div>
@@ -185,7 +185,7 @@ export const slides: SlideData[] = [
             <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed">Over-privileged accounts in Entra ID allowed unauthorized access to sensitive financial files.</p>
           </motion.div>
           <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[var(--muted)]">
-            <div className="text-[10px] text-[var(--muted)] opacity-70 uppercase tracking-widest font-bold mb-3">Phase 3</div>
+            <div className="text-[10px] text-[var(--muted)] uppercase tracking-widest font-bold mb-3">Phase 3</div>
             <div className="font-bold text-xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">Lateral Movement</div>
             <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed">Attackers moved undetected. SOC alerts failed to trigger adequate business escalation.</p>
           </motion.div>
@@ -233,7 +233,7 @@ export const slides: SlideData[] = [
               <span className="text-[10px] text-[var(--muted)] uppercase font-bold tracking-widest">Out of Scope</span>
             </div>
             <h3 className="font-bold text-2xl mb-4 font-serif italic text-[var(--muted)] group-hover:text-[var(--text-white)] transition-colors">Exceptions</h3>
-            <ul className="space-y-4 text-sm lg:text-base text-[var(--muted)] opacity-60 flex-grow flex flex-col justify-center relative z-10">
+            <ul className="space-y-4 text-sm lg:text-base text-[var(--muted)] flex-grow flex flex-col justify-center relative z-10">
               <li className="flex gap-3 items-center"><span className="text-[var(--muted)]">—</span> Third-party dependencies</li>
               <li className="flex gap-3 items-center"><span className="text-[var(--muted)]">—</span> End-user device hardware</li>
               <li className="flex gap-3 items-center"><span className="text-[var(--muted)]">—</span> Internal Risk Analysis (post-task)</li>
@@ -341,17 +341,17 @@ export const slides: SlideData[] = [
           <div className="space-y-6">
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--border)] pt-4 group">
               <div className="flex items-center justify-between mb-2 pdf-flex-row">
-                 <div className="text-[10px] text-[var(--muted)] opacity-60 group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">01. Cloud Workloads</div>
+                 <div className="text-[10px] text-[var(--muted)] group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">01. Cloud Workloads</div>
                  <div className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--text-white)] group-hover:border-[var(--muted)] transition-all pdf-marker">1</div>
               </div>
-              <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors opacity-80 group-hover:opacity-100">All Azure-hosted applications, services, and workloads group-wide.</p>
+              <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors group-hover:opacity-100">All Azure-hosted applications, services, and workloads group-wide.</p>
             </motion.div>
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--border)] pt-4 group">
               <div className="flex items-center justify-between mb-2 pdf-flex-row">
-                 <div className="text-[10px] text-[var(--muted)] opacity-60 group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">02. OT Intersection</div>
+                 <div className="text-[10px] text-[var(--muted)] group-hover:opacity-100 transition-colors uppercase tracking-widest font-bold pdf-tracking-normal">02. OT Intersection</div>
                  <div className="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--text-white)] group-hover:border-[var(--muted)] transition-all pdf-marker">2</div>
               </div>
-              <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors opacity-80 group-hover:opacity-100">Cloud-connected Manufacturing and Warehousing OT boundaries.</p>
+              <p className="text-base text-[var(--foreground)] group-hover:text-[var(--text-white)] transition-colors group-hover:opacity-100">Cloud-connected Manufacturing and Warehousing OT boundaries.</p>
             </motion.div>
             <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }} className="border-t border-[var(--accent)] border-opacity-10 pt-4 group">
               <div className="flex items-center justify-between mb-2 pdf-flex-row">
@@ -389,25 +389,25 @@ export const slides: SlideData[] = [
             <div className="absolute top-0 right-0 p-4 text-[var(--muted)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all group-hover:rotate-45 duration-300">✦</div>
             <div className="w-8 h-1 bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-300"></div>
             <h4 className="font-bold text-xl lg:text-2xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">Role Accountability</h4>
-            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed opacity-80 group-hover:opacity-100">Reviewing operating interactions between SOC, application owners, and stakeholders to eliminate fragmented silos.</p>
+            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed group-hover:opacity-100">Reviewing operating interactions between SOC, application owners, and stakeholders to eliminate fragmented silos.</p>
           </div>
           <div className="bg-[var(--card-bg)] p-6 lg:p-8 border border-[var(--border)] flex flex-col justify-center relative overflow-hidden group hover:border-[var(--muted)] transition-colors">
             <div className="absolute top-0 right-0 p-4 text-[var(--muted)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all group-hover:rotate-45 duration-300">✦</div>
             <div className="w-8 h-1 bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-300"></div>
             <h4 className="font-bold text-xl lg:text-2xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">Escalation Workflows</h4>
-            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed opacity-80 group-hover:opacity-100">Addressing the alert-to-response translation gap. Assuring high-priority alerts trigger business-level urgency.</p>
+            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed group-hover:opacity-100">Addressing the alert-to-response translation gap. Assuring high-priority alerts trigger business-level urgency.</p>
           </div>
           <div className="bg-[var(--card-bg)] p-6 lg:p-8 border border-[var(--border)] flex flex-col justify-center relative overflow-hidden group hover:border-[var(--muted)] transition-colors">
             <div className="absolute top-0 right-0 p-4 text-[var(--muted)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all group-hover:rotate-45 duration-300">✦</div>
             <div className="w-8 h-1 bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-300"></div>
             <h4 className="font-bold text-xl lg:text-2xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">Behavioral Resilience</h4>
-            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed opacity-80 group-hover:opacity-100">Targeted phishing and operational behavior programs for high-risk, privileged access holders.</p>
+            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed group-hover:opacity-100">Targeted phishing and operational behavior programs for high-risk, privileged access holders.</p>
           </div>
           <div className="bg-[var(--card-bg)] p-6 lg:p-8 border border-[var(--border)] flex flex-col justify-center relative overflow-hidden group hover:border-[var(--muted)] transition-colors">
             <div className="absolute top-0 right-0 p-4 text-[var(--muted)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all group-hover:rotate-45 duration-300">✦</div>
             <div className="w-8 h-1 bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-300"></div>
             <h4 className="font-bold text-xl lg:text-2xl mb-3 font-serif italic text-[var(--text-white)] group-hover:text-[var(--accent)] transition-colors">OT Boundaries</h4>
-            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed opacity-80 group-hover:opacity-100">Ensuring air-tight segmentation and controls between corporate IT and manufacturing capabilities.</p>
+            <p className="text-[var(--muted)] text-sm lg:text-base leading-relaxed group-hover:opacity-100">Ensuring air-tight segmentation and controls between corporate IT and manufacturing capabilities.</p>
           </div>
         </div>
       </div>
@@ -537,22 +537,22 @@ export const slides: SlideData[] = [
           <div className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col relative group hover:border-[var(--accent)] transition-all overflow-hidden justify-center hover:translate-x-2 duration-300">
             <div className="absolute top-0 right-0 p-4 text-[12px] text-[var(--muted)] opacity-30 font-mono group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all">01</div>
             <h4 className="font-bold text-2xl mb-3 font-serif italic text-[var(--text-white)]">Findings Report</h4>
-            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors opacity-80 group-hover:opacity-100">Evidence-based explanation of the breaches, strictly cleared of irrelevant false-positives.</p>
+            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors group-hover:opacity-100">Evidence-based explanation of the breaches, strictly cleared of irrelevant false-positives.</p>
           </div>
           <div className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col relative group hover:border-[var(--accent)] transition-all overflow-hidden justify-center hover:-translate-x-2 duration-300">
             <div className="absolute top-0 right-0 p-4 text-[12px] text-[var(--muted)] opacity-30 font-mono group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all">02</div>
             <h4 className="font-bold text-2xl mb-3 font-serif italic text-[var(--text-white)]">Prioritized Risk Register</h4>
-            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors opacity-80 group-hover:opacity-100">Findings directly linked to business impact models for straightforward Executive Board escalation.</p>
+            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors group-hover:opacity-100">Findings directly linked to business impact models for straightforward Executive Board escalation.</p>
           </div>
           <div className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col relative group hover:border-[var(--accent)] transition-all overflow-hidden justify-center hover:translate-x-2 duration-300">
             <div className="absolute top-0 right-0 p-4 text-[12px] text-[var(--muted)] opacity-30 font-mono group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all">03</div>
             <h4 className="font-bold text-2xl mb-3 font-serif italic text-[var(--text-white)]">Remediation Roadmap</h4>
-            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors opacity-80 group-hover:opacity-100">Actionable short-term quick wins combined with long-term architectural fixes.</p>
+            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors group-hover:opacity-100">Actionable short-term quick wins combined with long-term architectural fixes.</p>
           </div>
           <div className="bg-[var(--card-bg)] border border-[var(--border)] p-6 lg:p-8 flex flex-col relative group hover:border-[var(--accent)] transition-all overflow-hidden justify-center hover:-translate-x-2 duration-300">
             <div className="absolute top-0 right-0 p-4 text-[12px] text-[var(--muted)] opacity-30 font-mono group-hover:text-[var(--accent)] group-hover:opacity-100 transition-all">04</div>
             <h4 className="font-bold text-2xl mb-3 font-serif italic text-[var(--text-white)]">Operations Plan</h4>
-            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors opacity-80 group-hover:opacity-100">Targeted incident response enhancements and privilege behavior programs tailored to alpha group.</p>
+            <p className="text-[var(--muted)] text-base leading-relaxed group-hover:text-[var(--foreground)] transition-colors group-hover:opacity-100">Targeted incident response enhancements and privilege behavior programs tailored to alpha group.</p>
           </div>
         </div>
       </div>
